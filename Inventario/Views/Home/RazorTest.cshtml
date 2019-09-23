@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "RazorTest";
+}
+
+<h2 class="warning">RazorTest</h2>
+@{
+    var mensaje = "Test View Razor";
+    <br />
+    <center>
+        <h2>
+            Welcome <span class="badge progress-bar-danger"> @mensaje</span>
+        </h2>
+    </center>
+}
+<hr />
+@{ 
+    var saludo = "Bienvenidos a nuestro sitio web";
+    var diasemana = DateTime.Now.DayOfWeek;
+    var MEnsaje = saludo + "Aca en el peru es el dia" + diasemana;
+
+}
+<p>
+    <span class="badge progress-bar-success">El saludo es:</span>
+    <br />
+<p class="text-primary">@MEnsaje</p>
+</p>
+<table class="table table-hover">
+    
+    <tr class="warning">
+        <th width="100px">Dia</th>
+        <th width="100px">Hora</th>
+        <th width="100px">Minuto</th>
+    </tr>
+    
+    <tbody>
+        <tr>
+            <td>@DateTime.Now.Day</td>
+            <td>@DateTime.Now.Hour</td>
+            <td>@DateTime.Now.Minute</td>
+        </tr>
+    </tbody>
+
+</table>
+<hr />
+<ul class="list-group">
+    <li class="list-group-item active">Opciones de Ventas</li>
+    <li class="list-group-item">
+        @{ var precio = 80;
+            @if (precio > 60)
+            {
+                <p><strong>producto N° 1</strong></p>
+                <p class="text-primary">El Precio es muy alto</p>
+            }
+            }
+    </li>
+</ul>
+
+
+
+
+

@@ -1,0 +1,74 @@
+﻿@model Inventario.Models.Entidad.Producto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3 class=" alert-warning">¿Estas seguro que sea eliminar el registro ?</h3>
+<div>
+    @*<h4>Producto</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idProducto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.idProducto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoRapido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CodigoRapido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UM)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UM)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FehaCreacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FehaCreacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaModificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaModificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCategoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdCategoria)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

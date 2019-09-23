@@ -1,0 +1,8 @@
+﻿@model List<SelectListItem>
+<form asp-action="CambiarIdioma"
+asp-controller="Home"
+asp-route-ReturnUrl="@Context.Request.Path">
+<select name="culture"
+        asp-items="@(new SelectList(Model,"Value","Text",ViewBag.Idiomas))"></select>
+<button class="btn btn-primary">Cambiar Idioma</button>
+</form>

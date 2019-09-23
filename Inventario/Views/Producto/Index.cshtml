@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Inventario.Models.Entidad.Producto>
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    var titulo = "Listado de Producto";
+}
+@*<h1 class="alert-danger">@titulo</h1>*@
+@{
+    var B = "Buscar";
+    var N = "Crear Nuevo Producto";
+}
+@{
+    var I = "idProducto";
+    var C = "Categoria.Nombre";
+    var Nom = "Nombre";
+}
+<br />
+<h1 class="alert-warning">@Localizer["VListado de Producto"]</h1>
+<form class="row">
+    <div>
+        <div class="col-xs-3">
+            <input name="FilterByName" class="form-control" placeholder="Ingrese un Producto" />
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-danger"> @Localizer["VBuscar"] <span class="glyphicon glyphicon-search"></span></button>
+        </div>
+        <div class="col-xs-7">
+            <p>
+                <a asp-action="Create">@Localizer["VNuevo"]</a>
+            </p>
+            <br />
+            <p>
+                <a href="http://desktop-05b53hn/ReportServer_SSRS/Pages/ReportViewer.aspx?%2fPIRReportProducto%2fInfrome&rs:Command=Render">Report</a>
+            </p>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>@Localizer["VidProducto"]</th>
+        <th> @Localizer["VCategoria"]</th>
+        <th>@Localizer["VNombre"]</th>
+        <th>@Localizer["VCodigo"]</th>
+        <th>@Localizer["VUM"]</th>
+        <th>@Localizer["VPrecio"]</th>
+        <th>@Localizer["VExistencias"]</th>
+        <th>@Localizer["VFechaCreacion"]</th>
+        <th>@Localizer["VFechaModificacion"]</th>
+        <th>@Localizer["VOpciones"]</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr class="warning">
+                <td>@item.idProducto</td>
+                <td>@item.Categoria.Nombre</td>
+                <td>@item.Nombre</td>
+                <td>@item.CodigoRapido</td>
+                <td>@item.UM</td>
+                <td>@item.Precio</td>
+                <td>@item.Stock</td>
+                <td>@item.FehaCreacion</td>
+                <td>@item.FechaModificacion</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idProducto }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.idProducto }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idProducto })
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+

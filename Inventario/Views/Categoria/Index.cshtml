@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Inventario.Models.Entidad.Categoria>
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<h2 class="warning">LISTA DE CATEGORIA</h2>
+<br>
+<form>
+    <div class="row">
+        <div class="col-xs-3">
+            <input name="FilterByName" class="form-control" placeholder="Ingresae una Categoria" />
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-danger">Buscar<span class="glyphicon glyphicon-search"></span></button>
+        </div>
+        <div class="col-xs-6">
+            <p>
+                <a asp-action="Create">Nueva Categoria</a>
+            </p>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <tr class="warning">
+        <th>CODIGO</th>
+        <th>NOMBRE DE CATEGORIA</th>
+        <th>Opciones</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr class="warning">
+                <td>@item.idCategoria</td>
+                <td>@item.Nombre</td>
+                <td>
+                    @*<a asp-controller="Categoria" asp-action="Edit">Editar</a>*@
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idCategoria }) |
+                    @Html.ActionLink("Details ", "Details", new { id = item.idCategoria }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idCategoria })
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+

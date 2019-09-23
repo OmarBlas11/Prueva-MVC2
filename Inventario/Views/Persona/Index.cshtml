@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado De Persona</h2>
+<table class="table">
+    <tr class="warning">
+        <th>CODIGO</th>
+        <th>NOMBRE</th>
+        <th>APELLIDO PATERNO</th>
+        <th>APELLIDO MATERNO</th>
+        <th>EDAD</th>
+    </tr>
+    <tr class="warning">
+        <td>@ViewBag.idPersona</td>
+        <td>@ViewBag.Nombre</td>
+        <td>@ViewBag.ApellidoPaterno</td>
+        <td>@ViewBag.ApellidoMaterno</td>
+        <td>@ViewBag.Edad</td>
+    </tr>
+
+</table>
+
