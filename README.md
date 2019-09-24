@@ -1,2 +1,3 @@
-# Prueva-MVC2
-Prueba
+@{
+    Layout = "_Layout";
+}
